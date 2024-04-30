@@ -2943,6 +2943,66 @@ namespace Recurly
         Task<InvoiceCollection> CreatePendingPurchaseAsync(PurchaseCreate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
 
         /// <summary>
+        /// Authorize a purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_authorize_purchase">create_authorize_purchase api documentation</see>
+        /// </summary>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// Returns the authorize invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        InvoiceCollection CreateAuthorizePurchase(PurchaseCreate body, RequestOptions options = null);
+
+        /// <summary>
+        /// Authorize a purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_authorize_purchase">create_authorize_purchase api documentation</see>
+        /// </summary>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// Returns the authorize invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<InvoiceCollection> CreateAuthorizePurchaseAsync(PurchaseCreate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Capture a purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_capture_purchase">create_capture_purchase api documentation</see>
+        /// </summary>
+        /// <param name="transactionId">Transaction ID or UUID. For ID no prefix is used e.g. `e28zov4fw0v2`. For UUID use prefix `uuid-`, e.g. `uuid-123457890`.</param>
+        /// <returns>
+        /// Returns the captured invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        InvoiceCollection CreateCapturePurchase(string transactionId, RequestOptions options = null);
+
+        /// <summary>
+        /// Capture a purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_capture_purchase">create_capture_purchase api documentation</see>
+        /// </summary>
+        /// <param name="transactionId">Transaction ID or UUID. For ID no prefix is used e.g. `e28zov4fw0v2`. For UUID use prefix `uuid-`, e.g. `uuid-123457890`.</param>
+        /// <returns>
+        /// Returns the captured invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<InvoiceCollection> CreateCapturePurchaseAsync(string transactionId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Cancel Purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/cancelPurchase">cancelPurchase api documentation</see>
+        /// </summary>
+        /// <param name="transactionId">Transaction ID or UUID. For ID no prefix is used e.g. `e28zov4fw0v2`. For UUID use prefix `uuid-`, e.g. `uuid-123457890`.</param>
+        /// <returns>
+        /// Returns the cancelled invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        InvoiceCollection Cancelpurchase(string transactionId, RequestOptions options = null);
+
+        /// <summary>
+        /// Cancel Purchase <see href="https://developers.recurly.com/api/v2021-02-25#operation/cancelPurchase">cancelPurchase api documentation</see>
+        /// </summary>
+        /// <param name="transactionId">Transaction ID or UUID. For ID no prefix is used e.g. `e28zov4fw0v2`. For UUID use prefix `uuid-`, e.g. `uuid-123457890`.</param>
+        /// <returns>
+        /// Returns the cancelled invoice
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<InvoiceCollection> CancelpurchaseAsync(string transactionId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
         /// List the dates that have an available export to download. <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_export_dates">get_export_dates api documentation</see>
         /// </summary>
         /// <returns>
