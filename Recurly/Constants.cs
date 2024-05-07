@@ -14,6 +14,36 @@ namespace Recurly
     namespace Constants
     {
 
+        public enum ProrationSettingsCharge
+        {
+            Undefined = 0,
+
+            [EnumMember(Value = "full_amount")]
+            FullAmount,
+
+            [EnumMember(Value = "prorated_amount")]
+            ProratedAmount,
+
+            [EnumMember(Value = "none")]
+            None,
+
+        };
+
+        public enum ProrationSettingsCredit
+        {
+            Undefined = 0,
+
+            [EnumMember(Value = "full_amount")]
+            FullAmount,
+
+            [EnumMember(Value = "prorated_amount")]
+            ProratedAmount,
+
+            [EnumMember(Value = "none")]
+            None,
+
+        };
+
         public enum ExternalProductReferenceConnectionType
         {
             Undefined = 0,
