@@ -86,6 +86,10 @@ namespace Recurly.Resources
         [JsonProperty("po_number")]
         public string PoNumber { get; set; }
 
+        /// <value>Allows you to control how any resulting charges and credits will be calculated and prorated.</value>
+        [JsonProperty("proration_settings")]
+        public ProrationSettings ProrationSettings { get; set; }
+
         /// <value>Optionally override the default quantity of 1.</value>
         [JsonProperty("quantity")]
         public int? Quantity { get; set; }
