@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.53.0](https://github.com/recurly/recurly-client-dotnet/tree/4.53.0) (2024-05-08)
+
+[Full Changelog](https://github.com/recurly/recurly-client-dotnet/compare/4.52.0...4.53.0)
+
+
+**Merged Pull Requests**
+
+- Generated Latest Changes for v2021-02-25 (Proration Settings) [#834](https://github.com/recurly/recurly-client-dotnet/pull/834) ([recurly-integrations](https://github.com/recurly-integrations))
+
+
+
 ## [4.52.0](https://github.com/recurly/recurly-client-dotnet/tree/4.52.0) (2024-05-01)
 
 [Full Changelog](https://github.com/recurly/recurly-client-dotnet/compare/4.51.0...4.52.0)
