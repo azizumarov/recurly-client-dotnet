@@ -71,7 +71,7 @@ namespace Recurly.Resources
         [JsonProperty("quantity")]
         public int? Quantity { get; set; }
 
-        /// <value>External subscriptions can be active, canceled, expired, or past_due.</value>
+        /// <value>External subscriptions can be active, canceled, expired, past_due, voided, revoked, or paused.</value>
         [JsonProperty("state")]
         public string State { get; set; }
 

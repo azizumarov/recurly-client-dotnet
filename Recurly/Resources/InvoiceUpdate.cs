@@ -23,6 +23,10 @@ namespace Recurly.Resources
         [JsonProperty("customer_notes")]
         public string CustomerNotes { get; set; }
 
+        /// <value>An alphanumeric code shown per gateway on your site's payment gateways page. Set this code to ensure that a given invoice targets a given gateway.</value>
+        [JsonProperty("gateway_code")]
+        public string GatewayCode { get; set; }
+
         /// <value>Integer representing the number of days after an invoice's creation that the invoice will become past due. Changing Net terms changes due_on, and the invoice could move between past due and pending.</value>
         [JsonProperty("net_terms")]
         public int? NetTerms { get; set; }
