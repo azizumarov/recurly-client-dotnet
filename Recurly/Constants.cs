@@ -1506,6 +1506,9 @@ namespace Recurly
             [EnumMember(Value = "boleto")]
             Boleto,
 
+            [EnumMember(Value = "cash_app")]
+            CashApp,
+
         };
 
         public enum CardType
