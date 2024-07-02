@@ -23,9 +23,33 @@ namespace Recurly.Resources
         [JsonProperty("code")]
         public string Code { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>The name of the shipping method displayed to customers.</value>
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>
         /// Used by Avalara, Vertex, and Recurly’s built-in tax feature. The tax

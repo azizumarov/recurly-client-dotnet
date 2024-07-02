@@ -23,13 +23,34 @@ namespace Recurly.Resources
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("default_liability_gl_account_id")]
+        public string DefaultLiabilityGlAccountId { get; set; }
+
         /// <value>Registration number for the customer used on the invoice.</value>
         [JsonProperty("default_registration_number")]
         public string DefaultRegistrationNumber { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("default_revenue_gl_account_id")]
+        public string DefaultRevenueGlAccountId { get; set; }
+
         /// <value>VAT number for the customer used on the invoice.</value>
         [JsonProperty("default_vat_number")]
         public string DefaultVatNumber { get; set; }
+
+        /// <value>The source of the address that will be used as the destinaion in determining taxes. Available only when the site is on an Elite plan. A value of "destination" refers to the "Customer tax address". A value of "origin" refers to the "Business entity tax address".</value>
+        [JsonProperty("destination_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.DestinationTaxAddressSource? DestinationTaxAddressSource { get; set; }
 
         /// <value>Business entity ID</value>
         [JsonProperty("id")]
@@ -46,6 +67,11 @@ namespace Recurly.Resources
         /// <value>Object type</value>
         [JsonProperty("object")]
         public string Object { get; set; }
+
+        /// <value>The source of the address that will be used as the origin in determining taxes. Available only when the site is on an Elite plan. A value of "origin" refers to the "Business entity tax address". A value of "destination" refers to the "Customer tax address".</value>
+        [JsonProperty("origin_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.OriginTaxAddressSource? OriginTaxAddressSource { get; set; }
 
         /// <value>List of countries for which the business entity will be used.</value>
         [JsonProperty("subscriber_location_countries")]

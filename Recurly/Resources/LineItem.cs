@@ -72,6 +72,11 @@ namespace Recurly.Resources
         [JsonProperty("description")]
         public string Description { get; set; }
 
+        /// <value>The source of the address that will be used as the destinaion in determining taxes. Available only when the site is on an Elite plan. A value of "destination" refers to the "Customer tax address". A value of "origin" refers to the "Business entity tax address".</value>
+        [JsonProperty("destination_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.DestinationTaxAddressSource? DestinationTaxAddressSource { get; set; }
+
         /// <value>The discount applied to the line item.</value>
         [JsonProperty("discount")]
         public decimal? Discount { get; set; }
@@ -115,6 +120,14 @@ namespace Recurly.Resources
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
         public Constants.LegacyCategory? LegacyCategory { get; set; }
 
+        /// <value>
+        /// Unique code to identify the ledger account. Each code must start
+        /// with a letter or number. The following special characters are
+        /// allowed: `-_.,:`
+        /// </value>
+        [JsonProperty("liability_gl_account_code")]
+        public string LiabilityGlAccountCode { get; set; }
+
         /// <value>Object type</value>
         [JsonProperty("object")]
         public string Object { get; set; }
@@ -124,9 +137,22 @@ namespace Recurly.Resources
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
         public Constants.LineItemOrigin? Origin { get; set; }
 
+        /// <value>The source of the address that will be used as the origin in determining taxes. Available only when the site is on an Elite plan. A value of "origin" refers to the "Business entity tax address". A value of "destination" refers to the "Customer tax address".</value>
+        [JsonProperty("origin_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.OriginTaxAddressSource? OriginTaxAddressSource { get; set; }
+
         /// <value>The invoice where the credit originated. Will only have a value if the line item is a credit created from a previous credit, or if the credit was created from a charge refund.</value>
         [JsonProperty("original_line_item_invoice_id")]
         public string OriginalLineItemInvoiceId { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
 
         /// <value>If the line item is a charge or credit for a plan or add-on, this is the plan's code.</value>
         [JsonProperty("plan_code")]
@@ -167,6 +193,14 @@ namespace Recurly.Resources
         /// <value>A floating-point alternative to Refunded Quantity. For refund charges, the quantity being refunded. For non-refund charges, the total quantity refunded (possibly over multiple refunds). The Decimal Quantity feature must be enabled to utilize this field.</value>
         [JsonProperty("refunded_quantity_decimal")]
         public string RefundedQuantityDecimal { get; set; }
+
+        /// <value>
+        /// Unique code to identify the ledger account. Each code must start
+        /// with a letter or number. The following special characters are
+        /// allowed: `-_.,:`
+        /// </value>
+        [JsonProperty("revenue_gl_account_code")]
+        public string RevenueGlAccountCode { get; set; }
 
         /// <value>Revenue schedule type</value>
         [JsonProperty("revenue_schedule_type")]

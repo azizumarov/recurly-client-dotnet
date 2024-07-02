@@ -1178,7 +1178,7 @@ namespace Recurly
         /// </summary>
         /// <param name="customFieldDefinitionId">Custom Field Definition ID</param>
         /// <returns>
-        /// An custom field definition.
+        /// A custom field definition.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         CustomFieldDefinition GetCustomFieldDefinition(string customFieldDefinitionId, RequestOptions options = null);
@@ -1188,10 +1188,115 @@ namespace Recurly
         /// </summary>
         /// <param name="customFieldDefinitionId">Custom Field Definition ID</param>
         /// <returns>
-        /// An custom field definition.
+        /// A custom field definition.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         Task<CustomFieldDefinition> GetCustomFieldDefinitionAsync(string customFieldDefinitionId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Create a new general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_general_ledger_account">create_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// A new general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        GeneralLedgerAccount CreateGeneralLedgerAccount(GeneralLedgerAccountCreate body, RequestOptions options = null);
+
+        /// <summary>
+        /// Create a new general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_general_ledger_account">create_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// A new general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<GeneralLedgerAccount> CreateGeneralLedgerAccountAsync(GeneralLedgerAccountCreate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// List a site's general ledger accounts <see href="https://developers.recurly.com/api/v2021-02-25#operation/list_general_ledger_accounts">list_general_ledger_accounts api documentation</see>
+        /// </summary>
+        /// <param name="ids">Filter results by their IDs. Up to 200 IDs can be passed at once using  commas as separators, e.g. `ids=h1at4d57xlmy,gyqgg0d3v9n1,jrsm5b4yefg6`.    **Important notes:**    * The `ids` parameter cannot be used with any other ordering or filtering    parameters (`limit`, `order`, `sort`, `begin_time`, `end_time`, etc)  * Invalid or unknown IDs will be ignored, so you should check that the    results correspond to your request.  * Records are returned in an arbitrary order. Since results are all    returned at once you can sort the records yourself.  </param>
+        /// <param name="limit">Limit number of records 1-200.</param>
+        /// <param name="order">Sort order.</param>
+        /// <param name="sort">Sort field. You *really* only want to sort by `updated_at` in ascending  order. In descending order updated records will move behind the cursor and could  prevent some records from being returned.  </param>
+        /// <param name="accountType">General Ledger Account type by which to filter the response.</param>
+        /// <returns>
+        /// A list of the site's general ledger accounts.
+        /// </returns>
+        Pager<GeneralLedgerAccount> ListGeneralLedgerAccounts(ListGeneralLedgerAccountsParams optionalParams = null, RequestOptions options = null);
+
+
+        /// <summary>
+        /// Fetch a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_general_ledger_account">get_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="generalLedgerAccountId">General Ledger Account ID</param>
+        /// <returns>
+        /// A general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        GeneralLedgerAccount GetGeneralLedgerAccount(string generalLedgerAccountId, RequestOptions options = null);
+
+        /// <summary>
+        /// Fetch a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_general_ledger_account">get_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="generalLedgerAccountId">General Ledger Account ID</param>
+        /// <returns>
+        /// A general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<GeneralLedgerAccount> GetGeneralLedgerAccountAsync(string generalLedgerAccountId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Update a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/update_general_ledger_account">update_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="generalLedgerAccountId">General Ledger Account ID</param>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// The updated general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        GeneralLedgerAccount UpdateGeneralLedgerAccount(string generalLedgerAccountId, GeneralLedgerAccountUpdate body, RequestOptions options = null);
+
+        /// <summary>
+        /// Update a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/update_general_ledger_account">update_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="generalLedgerAccountId">General Ledger Account ID</param>
+        /// <param name="body">The body of the request.</param>
+        /// <returns>
+        /// The updated general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<GeneralLedgerAccount> UpdateGeneralLedgerAccountAsync(string generalLedgerAccountId, GeneralLedgerAccountUpdate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Get a single Performance Obligation. <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligation">get_performance_obligation api documentation</see>
+        /// </summary>
+        /// <param name="performanceObligationId">Performance Obligation id.</param>
+        /// <returns>
+        /// A single Performance Obligation.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        PerformanceObligation GetPerformanceObligation(string performanceObligationId, RequestOptions options = null);
+
+        /// <summary>
+        /// Get a single Performance Obligation. <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligation">get_performance_obligation api documentation</see>
+        /// </summary>
+        /// <param name="performanceObligationId">Performance Obligation id.</param>
+        /// <returns>
+        /// A single Performance Obligation.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        Task<PerformanceObligation> GetPerformanceObligationAsync(string performanceObligationId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);
+
+        /// <summary>
+        /// Get a site's Performance Obligations <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligations">get_performance_obligations api documentation</see>
+        /// </summary>
+        /// <returns>
+        /// A list of Performance Obligations.
+        /// </returns>
+        Pager<PerformanceObligation> GetPerformanceObligations(RequestOptions options = null);
+
 
         /// <summary>
         /// List an invoice template's associated accounts <see href="https://developers.recurly.com/api/v2021-02-25#operation/list_invoice_template_accounts">list_invoice_template_accounts api documentation</see>
@@ -1610,7 +1715,7 @@ namespace Recurly
         /// <summary>
         /// Fetch an external subscription <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription">get_external_subscription api documentation</see>
         /// </summary>
-        /// <param name="externalSubscriptionId">External subscription id</param>
+        /// <param name="externalSubscriptionId">External subscription ID or external_id. For ID no prefix is used e.g. `e28zov4fw0v2`. For external_id use prefix `external-id-`, e.g. `external-id-123456`.</param>
         /// <returns>
         /// Settings for an external subscription.
         /// </returns>
@@ -1620,7 +1725,7 @@ namespace Recurly
         /// <summary>
         /// Fetch an external subscription <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription">get_external_subscription api documentation</see>
         /// </summary>
-        /// <param name="externalSubscriptionId">External subscription id</param>
+        /// <param name="externalSubscriptionId">External subscription ID or external_id. For ID no prefix is used e.g. `e28zov4fw0v2`. For external_id use prefix `external-id-`, e.g. `external-id-123456`.</param>
         /// <returns>
         /// Settings for an external subscription.
         /// </returns>
@@ -3168,23 +3273,23 @@ namespace Recurly
 
 
         /// <summary>
-        /// Fetch an external payment_phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
+        /// Fetch an external payment phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
         /// </summary>
         /// <param name="externalSubscriptionId">External subscription id</param>
         /// <param name="externalPaymentPhaseId">External payment phase ID, e.g. `a34ypb2ef9w1`.</param>
         /// <returns>
-        /// Details for an external payment_phase.
+        /// Details for an external payment phase.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         ExternalPaymentPhase GetExternalSubscriptionExternalPaymentPhase(string externalSubscriptionId, string externalPaymentPhaseId, RequestOptions options = null);
 
         /// <summary>
-        /// Fetch an external payment_phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
+        /// Fetch an external payment phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
         /// </summary>
         /// <param name="externalSubscriptionId">External subscription id</param>
         /// <param name="externalPaymentPhaseId">External payment phase ID, e.g. `a34ypb2ef9w1`.</param>
         /// <returns>
-        /// Details for an external payment_phase.
+        /// Details for an external payment phase.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         Task<ExternalPaymentPhase> GetExternalSubscriptionExternalPaymentPhaseAsync(string externalSubscriptionId, string externalPaymentPhaseId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null);

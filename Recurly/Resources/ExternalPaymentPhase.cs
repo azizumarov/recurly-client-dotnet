@@ -35,10 +35,6 @@ namespace Recurly.Resources
         [JsonProperty("ends_at")]
         public DateTime? EndsAt { get; set; }
 
-        /// <value>Subscription from an external resource such as Apple App Store or Google Play Store.</value>
-        [JsonProperty("external_subscription")]
-        public ExternalSubscription ExternalSubscription { get; set; }
-
         /// <value>System-generated unique identifier for an external payment phase ID, e.g. `e28zov4fw0v2`.</value>
         [JsonProperty("id")]
         public string Id { get; set; }

@@ -47,6 +47,10 @@ namespace Recurly.Resources
         [JsonProperty("external_id")]
         public string ExternalId { get; set; }
 
+        /// <value>The phases of the external subscription payment lifecycle.</value>
+        [JsonProperty("external_payment_phases")]
+        public List<ExternalPaymentPhase> ExternalPaymentPhases { get; set; }
+
         /// <value>External Product Reference details</value>
         [JsonProperty("external_product_reference")]
         public ExternalProductReferenceMini ExternalProductReference { get; set; }
@@ -54,6 +58,10 @@ namespace Recurly.Resources
         /// <value>System-generated unique identifier for an external subscription ID, e.g. `e28zov4fw0v2`.</value>
         [JsonProperty("id")]
         public string Id { get; set; }
+
+        /// <value>An indication of whether or not the external subscription was created by a historical data import.</value>
+        [JsonProperty("imported")]
+        public bool? Imported { get; set; }
 
         /// <value>An indication of whether or not the external subscription is in a grace period.</value>
         [JsonProperty("in_grace_period")]

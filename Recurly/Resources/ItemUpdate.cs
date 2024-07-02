@@ -47,9 +47,33 @@ namespace Recurly.Resources
         [JsonProperty("external_sku")]
         public string ExternalSku { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>This name describes your item and will appear on the invoice when it's purchased on a one time basis.</value>
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>Revenue schedule type</value>
         [JsonProperty("revenue_schedule_type")]

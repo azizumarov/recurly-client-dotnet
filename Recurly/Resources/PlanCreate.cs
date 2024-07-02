@@ -76,9 +76,25 @@ namespace Recurly.Resources
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
         public Constants.IntervalUnit? IntervalUnit { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>This name describes your plan and will appear on the Hosted Payment Page and the subscriber's invoice.</value>
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
 
         /// <value>
         /// A fixed pricing model has the same price for each billing period.
@@ -93,6 +109,14 @@ namespace Recurly.Resources
         [JsonProperty("ramp_intervals")]
         public List<PlanRampInterval> RampIntervals { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
+
         /// <value>Revenue schedule type</value>
         [JsonProperty("revenue_schedule_type")]
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
@@ -101,6 +125,30 @@ namespace Recurly.Resources
         /// <value>Accounting code for invoice line items for the plan's setup fee. If no value is provided, it defaults to plan's accounting code.</value>
         [JsonProperty("setup_fee_accounting_code")]
         public string SetupFeeAccountingCode { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("setup_fee_liability_gl_account_id")]
+        public string SetupFeeLiabilityGlAccountId { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("setup_fee_performance_obligation_id")]
+        public string SetupFeePerformanceObligationId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("setup_fee_revenue_gl_account_id")]
+        public string SetupFeeRevenueGlAccountId { get; set; }
 
         /// <value>Setup fee revenue schedule type</value>
         [JsonProperty("setup_fee_revenue_schedule_type")]

@@ -1766,7 +1766,7 @@ namespace Recurly
         /// </summary>
         /// <param name="GetCustomFieldDefinitionParams">Optional Parameters for the request</param>
         /// <returns>
-        /// An custom field definition.
+        /// A custom field definition.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         public CustomFieldDefinition GetCustomFieldDefinition(string customFieldDefinitionId, RequestOptions options = null)
@@ -1783,7 +1783,7 @@ namespace Recurly
         /// </summary>
         /// <param name="GetCustomFieldDefinitionParams">Optional Parameters for the request</param>
         /// <returns>
-        /// An custom field definition.
+        /// A custom field definition.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         public Task<CustomFieldDefinition> GetCustomFieldDefinitionAsync(string customFieldDefinitionId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
@@ -1792,6 +1792,179 @@ namespace Recurly
             var url = this.InterpolatePath("/custom_field_definitions/{custom_field_definition_id}", urlParams);
             return MakeRequestAsync<CustomFieldDefinition>(Method.GET, url, null, null, options, cancellationToken);
         }
+
+
+
+        /// <summary>
+        /// Create a new general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_general_ledger_account">create_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="CreateGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A new general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public GeneralLedgerAccount CreateGeneralLedgerAccount(GeneralLedgerAccountCreate body, RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { };
+            var url = this.InterpolatePath("/general_ledger_accounts", urlParams);
+            return MakeRequest<GeneralLedgerAccount>(Method.POST, url, body, null, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/create_general_ledger_account">create_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="CreateGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A new general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public Task<GeneralLedgerAccount> CreateGeneralLedgerAccountAsync(GeneralLedgerAccountCreate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { };
+            var url = this.InterpolatePath("/general_ledger_accounts", urlParams);
+            return MakeRequestAsync<GeneralLedgerAccount>(Method.POST, url, body, null, options, cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// List a site's general ledger accounts <see href="https://developers.recurly.com/api/v2021-02-25#operation/list_general_ledger_accounts">list_general_ledger_accounts api documentation</see>
+        /// </summary>
+        /// <param name="ListGeneralLedgerAccountsParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A list of the site's general ledger accounts.
+        /// </returns>
+        public Pager<GeneralLedgerAccount> ListGeneralLedgerAccounts(ListGeneralLedgerAccountsParams optionalParams = null, RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { };
+            var queryParams = (optionalParams ?? new ListGeneralLedgerAccountsParams()).ToDictionary();
+            var url = this.InterpolatePath("/general_ledger_accounts", urlParams);
+            return Pager<GeneralLedgerAccount>.Build(url, queryParams, options, this);
+        }
+
+
+
+
+
+        /// <summary>
+        /// Fetch a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_general_ledger_account">get_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="GetGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public GeneralLedgerAccount GetGeneralLedgerAccount(string generalLedgerAccountId, RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "general_ledger_account_id", generalLedgerAccountId } };
+            var url = this.InterpolatePath("/general_ledger_accounts/{general_ledger_account_id}", urlParams);
+            return MakeRequest<GeneralLedgerAccount>(Method.GET, url, null, null, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetch a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_general_ledger_account">get_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="GetGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public Task<GeneralLedgerAccount> GetGeneralLedgerAccountAsync(string generalLedgerAccountId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "general_ledger_account_id", generalLedgerAccountId } };
+            var url = this.InterpolatePath("/general_ledger_accounts/{general_ledger_account_id}", urlParams);
+            return MakeRequestAsync<GeneralLedgerAccount>(Method.GET, url, null, null, options, cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// Update a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/update_general_ledger_account">update_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="UpdateGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// The updated general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public GeneralLedgerAccount UpdateGeneralLedgerAccount(string generalLedgerAccountId, GeneralLedgerAccountUpdate body, RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "general_ledger_account_id", generalLedgerAccountId } };
+            var url = this.InterpolatePath("/general_ledger_accounts/{general_ledger_account_id}", urlParams);
+            return MakeRequest<GeneralLedgerAccount>(Method.PUT, url, body, null, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a general ledger account <see href="https://developers.recurly.com/api/v2021-02-25#operation/update_general_ledger_account">update_general_ledger_account api documentation</see>
+        /// </summary>
+        /// <param name="UpdateGeneralLedgerAccountParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// The updated general ledger account.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public Task<GeneralLedgerAccount> UpdateGeneralLedgerAccountAsync(string generalLedgerAccountId, GeneralLedgerAccountUpdate body, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "general_ledger_account_id", generalLedgerAccountId } };
+            var url = this.InterpolatePath("/general_ledger_accounts/{general_ledger_account_id}", urlParams);
+            return MakeRequestAsync<GeneralLedgerAccount>(Method.PUT, url, body, null, options, cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// Get a single Performance Obligation. <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligation">get_performance_obligation api documentation</see>
+        /// </summary>
+        /// <param name="GetPerformanceObligationParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A single Performance Obligation.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public PerformanceObligation GetPerformanceObligation(string performanceObligationId, RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "performance_obligation_id", performanceObligationId } };
+            var url = this.InterpolatePath("/performance_obligations/{performance_obligation_id}", urlParams);
+            return MakeRequest<PerformanceObligation>(Method.GET, url, null, null, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a single Performance Obligation. <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligation">get_performance_obligation api documentation</see>
+        /// </summary>
+        /// <param name="GetPerformanceObligationParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A single Performance Obligation.
+        /// </returns>
+        /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
+        public Task<PerformanceObligation> GetPerformanceObligationAsync(string performanceObligationId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { { "performance_obligation_id", performanceObligationId } };
+            var url = this.InterpolatePath("/performance_obligations/{performance_obligation_id}", urlParams);
+            return MakeRequestAsync<PerformanceObligation>(Method.GET, url, null, null, options, cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// Get a site's Performance Obligations <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_performance_obligations">get_performance_obligations api documentation</see>
+        /// </summary>
+        /// <param name="GetPerformanceObligationsParams">Optional Parameters for the request</param>
+        /// <returns>
+        /// A list of Performance Obligations.
+        /// </returns>
+        public Pager<PerformanceObligation> GetPerformanceObligations(RequestOptions options = null)
+        {
+            var urlParams = new Dictionary<string, object> { };
+            var url = this.InterpolatePath("/performance_obligations", urlParams);
+            return Pager<PerformanceObligation>.Build(url, null, options, this);
+        }
+
+
 
 
 
@@ -4909,11 +5082,11 @@ namespace Recurly
 
 
         /// <summary>
-        /// Fetch an external payment_phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
+        /// Fetch an external payment phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
         /// </summary>
         /// <param name="GetExternalSubscriptionExternalPaymentPhaseParams">Optional Parameters for the request</param>
         /// <returns>
-        /// Details for an external payment_phase.
+        /// Details for an external payment phase.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         public ExternalPaymentPhase GetExternalSubscriptionExternalPaymentPhase(string externalSubscriptionId, string externalPaymentPhaseId, RequestOptions options = null)
@@ -4926,11 +5099,11 @@ namespace Recurly
 
 
         /// <summary>
-        /// Fetch an external payment_phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
+        /// Fetch an external payment phase <see href="https://developers.recurly.com/api/v2021-02-25#operation/get_external_subscription_external_payment_phase">get_external_subscription_external_payment_phase api documentation</see>
         /// </summary>
         /// <param name="GetExternalSubscriptionExternalPaymentPhaseParams">Optional Parameters for the request</param>
         /// <returns>
-        /// Details for an external payment_phase.
+        /// Details for an external payment phase.
         /// </returns>
         /// <exception cref="Recurly.Errors.ApiError">Thrown when the request is invalid.</exception>
         public Task<ExternalPaymentPhase> GetExternalSubscriptionExternalPaymentPhaseAsync(string externalSubscriptionId, string externalPaymentPhaseId, CancellationToken cancellationToken = default(CancellationToken), RequestOptions options = null)
