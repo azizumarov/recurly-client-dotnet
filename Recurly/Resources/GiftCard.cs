@@ -47,9 +47,25 @@ namespace Recurly.Resources
         [JsonProperty("id")]
         public string Id { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>Object type</value>
         [JsonProperty("object")]
         public string Object { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
 
         /// <value>The product code or SKU of the gift card product.</value>
         [JsonProperty("product_code")]
@@ -74,6 +90,14 @@ namespace Recurly.Resources
         /// <value>The ID of the invoice for the gift card redemption made by the recipient.  Does not have a value until gift card is redeemed.</value>
         [JsonProperty("redemption_invoice_id")]
         public string RedemptionInvoiceId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>The amount of the gift card, which is the amount of the charge to the gifter account and the amount of credit that is applied to the recipient account upon successful redemption.</value>
         [JsonProperty("unit_amount")]

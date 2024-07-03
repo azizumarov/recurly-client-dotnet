@@ -38,7 +38,7 @@ namespace Recurly.Resources
 
         /// <value>
         /// * If `item_code`/`item_id` is part of the request and the item
-        /// has a default currency then `currencies` is optional. If the item does
+        /// has a default currency, then `currencies` is optional. If the item does
         /// not have a default currency, then `currencies` is required. If `item_code`/`item_id`
         /// is not present `currencies` is required.
         /// * If the add-on's `tier_type` is `tiered`, `volume`, or `stairstep`,
@@ -56,13 +56,21 @@ namespace Recurly.Resources
         [JsonProperty("display_quantity")]
         public bool? DisplayQuantity { get; set; }
 
-        /// <value>Unique code to identify an item. Available when the `Credit Invoices` feature are enabled. If `item_id` and `item_code` are both present, `item_id` will be used.</value>
+        /// <value>Unique code to identify an item. Available when the `Credit Invoices` feature is enabled. If `item_id` and `item_code` are both present, `item_id` will be used.</value>
         [JsonProperty("item_code")]
         public string ItemCode { get; set; }
 
         /// <value>System-generated unique identifier for an item. Available when the `Credit Invoices` feature is enabled. If `item_id` and `item_code` are both present, `item_id` will be used.</value>
         [JsonProperty("item_id")]
         public string ItemId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
 
         /// <value>System-generated unique identifier for a measured unit to be associated with the add-on. Either `measured_unit_id` or `measured_unit_name` are required when `add_on_type` is `usage`. If `measured_unit_id` and `measured_unit_name` are both present, `measured_unit_id` will be used.</value>
         [JsonProperty("measured_unit_id")]
@@ -90,9 +98,25 @@ namespace Recurly.Resources
         [JsonProperty("percentage_tiers")]
         public List<PercentageTiersByCurrency> PercentageTiers { get; set; }
 
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
+
         /// <value>Plan ID</value>
         [JsonProperty("plan_id")]
         public string PlanId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>When this add-on is invoiced, the line item will use this revenue schedule. If `item_code`/`item_id` is part of the request then `revenue_schedule_type` must be absent in the request as the value will be set from the item.</value>
         [JsonProperty("revenue_schedule_type")]

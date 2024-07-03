@@ -44,6 +44,11 @@ namespace Recurly.Resources
         [JsonProperty("description")]
         public string Description { get; set; }
 
+        /// <value>The source of the address that will be used as the destinaion in determining taxes. Available only when the site is on an Elite plan. A value of "destination" refers to the "Customer tax address". A value of "origin" refers to the "Business entity tax address".</value>
+        [JsonProperty("destination_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.DestinationTaxAddressSource? DestinationTaxAddressSource { get; set; }
+
         /// <value>If this date is provided, it indicates the end of a time range.</value>
         [JsonProperty("end_date")]
         public DateTime? EndDate { get; set; }
@@ -56,10 +61,31 @@ namespace Recurly.Resources
         [JsonProperty("item_id")]
         public string ItemId { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>Origin `external_gift_card` is allowed if the Gift Cards feature is enabled on your site and `type` is `credit`. Set this value in order to track gift card credits from external gift cards (like InComm). It also skips billing information requirements.  Origin `prepayment` is only allowed if `type` is `charge` and `tax_exempt` is left blank or set to true.  This origin creates a charge and opposite credit on the account to be used for future invoices.</value>
         [JsonProperty("origin")]
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
         public Constants.LineItemCreateOrigin? Origin { get; set; }
+
+        /// <value>The source of the address that will be used as the origin in determining taxes. Available only when the site is on an Elite plan. A value of "origin" refers to the "Business entity tax address". A value of "destination" refers to the "Customer tax address".</value>
+        [JsonProperty("origin_tax_address_source")]
+        [JsonConverter(typeof(RecurlyStringEnumConverter))]
+        public Constants.OriginTaxAddressSource? OriginTaxAddressSource { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
 
         /// <value>Optional field to track a product code or SKU for the line item. This can be used to later reporting on product purchases. For Vertex tax calculations, this field will be used as the Vertex `product` field. If `item_code`/`item_id` is part of the request then `product_code` must be absent.</value>
         [JsonProperty("product_code")]
@@ -68,6 +94,14 @@ namespace Recurly.Resources
         /// <value>This number will be multiplied by the unit amount to compute the subtotal before any discounts or taxes.</value>
         [JsonProperty("quantity")]
         public int? Quantity { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>Revenue schedule type</value>
         [JsonProperty("revenue_schedule_type")]

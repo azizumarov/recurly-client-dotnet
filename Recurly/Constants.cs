@@ -2363,5 +2363,41 @@ namespace Recurly
 
         };
 
+        public enum GeneralLedgerAccountType
+        {
+            Undefined = 0,
+
+            [EnumMember(Value = "liability")]
+            Liability,
+
+            [EnumMember(Value = "revenue")]
+            Revenue,
+
+        };
+
+        public enum OriginTaxAddressSource
+        {
+            Undefined = 0,
+
+            [EnumMember(Value = "origin")]
+            Origin,
+
+            [EnumMember(Value = "destination")]
+            Destination,
+
+        };
+
+        public enum DestinationTaxAddressSource
+        {
+            Undefined = 0,
+
+            [EnumMember(Value = "destination")]
+            Destination,
+
+            [EnumMember(Value = "origin")]
+            Origin,
+
+        };
+
     }
 }

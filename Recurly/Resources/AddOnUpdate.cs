@@ -51,6 +51,14 @@ namespace Recurly.Resources
         [JsonProperty("id")]
         public string Id { get; set; }
 
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("liability_gl_account_id")]
+        public string LiabilityGlAccountId { get; set; }
+
         /// <value>System-generated unique identifier for a measured unit to be associated with the add-on. Either `measured_unit_id` or `measured_unit_name` are required when `add_on_type` is `usage`. If `measured_unit_id` and `measured_unit_name` are both present, `measured_unit_id` will be used.</value>
         [JsonProperty("measured_unit_id")]
         public string MeasuredUnitId { get; set; }
@@ -71,11 +79,27 @@ namespace Recurly.Resources
         /// `percentage_tiers` is an array of objects, which must have the set of tiers
         /// per currency and the currency code. The tier_type must be `volume` or `tiered`,
         /// if not, it must be absent. There must be one tier without an `ending_amount` value
-        /// which represents the final tier.  This feature is currently in development and
+        /// which represents the final tier. This feature is currently in development and
         /// requires approval and enablement, please contact support.
         /// </value>
         [JsonProperty("percentage_tiers")]
         public List<PercentageTiersByCurrency> PercentageTiers { get; set; }
+
+        /// <value>
+        /// The ID of a performance obligation. Performance obligations are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("performance_obligation_id")]
+        public string PerformanceObligationId { get; set; }
+
+        /// <value>
+        /// The ID of a general ledger account. General ledger accounts are
+        /// only accessible as a part of the Recurly RevRec Standard and
+        /// Recurly RevRec Advanced features.
+        /// </value>
+        [JsonProperty("revenue_gl_account_id")]
+        public string RevenueGlAccountId { get; set; }
 
         /// <value>When this add-on is invoiced, the line item will use this revenue schedule. If `item_code`/`item_id` is part of the request then `revenue_schedule_type` must be absent in the request as the value will be set from the item.</value>
         [JsonProperty("revenue_schedule_type")]
