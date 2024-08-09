@@ -17,7 +17,7 @@ namespace Recurly.Resources
 
         /// <value>
         /// The amount to be refunded. The amount will be split between the line items.
-        /// If no amount is specified, it will default to refunding the total refundable amount on the invoice.
+        /// If `type` is "amount" and no amount is specified, it will default to refunding the total refundable amount on the invoice. Can only be present if `type` is "amount".
         /// </value>
         [JsonProperty("amount")]
         public decimal? Amount { get; set; }
@@ -47,6 +47,10 @@ namespace Recurly.Resources
         [JsonProperty("line_items")]
         public List<LineItemRefund> LineItems { get; set; }
 
+        /// <value>The percentage of the remaining balance to be refunded. The percentage will be split between the line items. If `type` is "percentage" and no percentage is specified, it will default to refunding 100% of the refundable amount on the invoice. Can only be present if `type` is "percentage".</value>
+        [JsonProperty("percentage")]
+        public int? Percentage { get; set; }
+
         /// <value>
         /// Indicates how the invoice should be refunded when both a credit and transaction are present on the invoice:
         /// - `transaction_first` – Refunds the transaction first, then any amount is issued as credit back to the account. Default value when Credit Invoices feature is enabled.
@@ -56,7 +60,7 @@ namespace Recurly.Resources
         /// </value>
         [JsonProperty("refund_method")]
         [JsonConverter(typeof(RecurlyStringEnumConverter))]
-        public Constants.RefuneMethod? RefundMethod { get; set; }
+        public Constants.RefundMethod? RefundMethod { get; set; }
 
         /// <value>The type of refund. Amount and line items cannot both be specified in the request.</value>
         [JsonProperty("type")]

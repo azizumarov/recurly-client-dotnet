@@ -900,12 +900,15 @@ namespace Recurly
             [EnumMember(Value = "amount")]
             Amount,
 
+            [EnumMember(Value = "percentage")]
+            Percentage,
+
             [EnumMember(Value = "line_items")]
             LineItems,
 
         };
 
-        public enum RefuneMethod
+        public enum RefundMethod
         {
             Undefined = 0,
 
@@ -938,6 +941,9 @@ namespace Recurly
 
             [EnumMember(Value = "apple_pay")]
             ApplePay,
+
+            [EnumMember(Value = "braintree_apple_pay")]
+            BraintreeApplePay,
 
             [EnumMember(Value = "check")]
             Check,
@@ -1457,6 +1463,9 @@ namespace Recurly
 
             [EnumMember(Value = "bank_account_info")]
             BankAccountInfo,
+
+            [EnumMember(Value = "braintree_apple_pay")]
+            BraintreeApplePay,
 
             [EnumMember(Value = "check")]
             Check,
