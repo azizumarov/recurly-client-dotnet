@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.57.0](https://github.com/recurly/recurly-client-dotnet/tree/4.57.0) (2024-08-09)
+
+[Full Changelog](https://github.com/recurly/recurly-client-dotnet/compare/4.56.0...4.57.0)
+
+
+**Merged Pull Requests**
+
+- Breaking change: The constant RefuneMethod Enum has been renamed RefundMethod [#845](https://github.com/recurly/recurly-client-dotnet/pull/845) ([recurly-integrations](https://github.com/recurly-integrations))
+
+
+
 ## [4.56.0](https://github.com/recurly/recurly-client-dotnet/tree/4.56.0) (2024-07-03)
 
 [Full Changelog](https://github.com/recurly/recurly-client-dotnet/compare/4.55.0...4.56.0)
